@@ -1,0 +1,62 @@
+// media queries
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+  // copy pasta ;) @include tablet {}
+}
+
+@mixin desktop {
+  @media screen and (min-width: 1200px) {
+    @content;
+  }
+  // copy pasta ;) @include desktop {}
+}
+
+//
+@mixin t($fontSize, $lineHeight) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  // copy pasta ;) @include t (,)
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin formTitle {
+  font-family: $fontMain;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  color: $colorTextDark;
+}
+
+@mixin formRellenaLabels {
+  font-family: $fontMain;
+  font-size: 14px;
+  color: $colorBrandDark;
+  // copy pasta ;) @include formRellenaLabels
+}
+@mixin formRellenaInput {
+  height: 30px;
+  margin-top: 7px;
+  border: 1px solid $colorBrandLight;
+  outline: none;
+  color: $colorTextLight;
+  text-indent: 9px;
+  @include tablet {
+    text-indent: 10px;
+  }
+  // copy pasta ;) @include formRellenaInput
+}
+@mixin formRellenaField {
+  margin: 0 20px 20px 19px;
+  display: flex;
+  flex-direction: column;
+  @include tablet {
+    margin: 0 0 20px 0;
+  }
+}

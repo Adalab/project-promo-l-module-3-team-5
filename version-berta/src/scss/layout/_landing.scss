@@ -1,0 +1,90 @@
+.main--landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: $colorBackground;
+  grid-row: 2;
+}
+.landing {
+  align-self: start;
+  margin-top: 6vh;
+  @include center;
+  flex-direction: column;
+  text-align: center;
+  @include tablet {
+    margin-top: 3vh;
+  }
+  &__title {
+    font-family: $fontTitle;
+    font-weight: 900;
+    @include t(19.2px, normal);
+    color: $colorBrandSide;
+    @include tablet {
+      font-size: 24px;
+    }
+  }
+  &__text {
+    font-family: $fontMain;
+    @include t(12.8px, normal);
+    color: $colorBrandDark;
+    width: 265px;
+    @include tablet {
+      font-size: 16px;
+      width: 331px;
+    }
+  }
+  &__icons {
+    list-style-type: none;
+    margin-top: 3vh;
+    border: 1.6px solid rgba(225, 115, 52, 0.21);
+    border-radius: 4px;
+    // width: 268px;
+    padding: 2.5vh 20px 1.8vh;
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    column-gap: 24px;
+    justify-content: center;
+    text-align: center;
+    @include tablet {
+      margin-top: 2.6vh;
+      // width: 325px;
+      grid-template-columns: repeat(3, 75px);
+      column-gap: 30px;
+      border-radius: 5px;
+      border-width: 2px;
+    }
+    &--icon {
+      color: $colorBrandSide;
+      @include t(22.4px, normal);
+      @include tablet {
+        font-size: 28px;
+      }
+    }
+    &--title {
+      font-family: $fontMain;
+      color: $colorTextDark;
+      font-weight: 400;
+      @include t(12.8px, normal);
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+  }
+  &__nav {
+    width: 129px;
+    height: 42px;
+    background-color: $colorBrandMedium;
+    border-radius: 21px;
+    margin-bottom: 5vh;
+    @include center;
+    &--link {
+      @include t(16px, normal);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      font-family: $fontMain;
+      font-weight: 600;
+    }
+  }
+}

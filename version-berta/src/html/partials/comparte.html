@@ -1,0 +1,38 @@
+<fieldset class="comparte collapsable collapsable--on">
+  <include
+    src="./colapsable.html"
+    faClass="fas fa-share-alt"
+    title="Comparte"
+    jsLegend="legend__comparte"
+  ></include>
+
+  <div class="collapsable--hide">
+    <div class="comparte__nav">
+      <button
+        type="button"
+        class="comparte__nav--button comparte__nav--buttongrey js-create-btn"
+        title="comprueba tus datos antes de pulsar"
+      >
+        <i class="far fa-address-card"></i>crear tarjeta
+      </button>
+    </div>
+    <div class="comparte__nav2 js-hidden-div comparte__nav2--hidden">
+      <h3 class="comparte__nav2--text">La tarjeta ha sido creada:</h3>
+      <a
+        class="comparte__nav2--link js-card-result"
+        href=""
+        target="_blank"
+        title="ir a tarjeta"
+      ></a>
+      <nav>
+        <a
+          class="comparte__nav2--link2 twitter-share-button js-twitter"
+          href=""
+          target="_blank"
+          ><i class="fab fa-twitter"></i
+          ><span class="comparte__nav2--span">compartir en twitter</span></a
+        >
+      </nav>
+    </div>
+  </div>
+</fieldset>

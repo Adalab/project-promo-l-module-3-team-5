@@ -1,0 +1,13 @@
+.header {
+  align-self: end;
+  &__title {
+    display: none;
+  }
+  &__landing--img {
+    width: 250px;
+  }
+  &__generator--img {
+    width: 201px;
+    margin: 3vh 0 3vh 40px;
+  }
+}

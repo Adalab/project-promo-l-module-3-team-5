@@ -1,0 +1,130 @@
+.preview {
+  background-image: linear-gradient(
+    to bottom,
+    $colorGradientOne,
+    $colorGradientTwo
+  );
+  height: 457px;
+  width: 100%;
+  flex-grow: 1;
+  display: grid;
+  grid-template-rows: repeat(2, auto);
+  row-gap: 20px;
+  justify-content: center;
+  @include tablet {
+    border-radius: 6px;
+    height: auto;
+    width: 329px;
+    align-self: stretch;
+  }
+  &__reset {
+    align-self: end;
+    width: 75px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid white;
+    outline: none;
+    border-radius: 15px;
+    font-family: $fontMain;
+    color: $colorTextDark;
+    @include t(12px, 1.67);
+    text-transform: uppercase;
+    @include center;
+    justify-content: space-evenly;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__card {
+    align-self: start;
+    width: 240px;
+    min-height: 329px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+    padding: 21px 0 12px;
+  }
+  .card {
+    &__name {
+      padding: 0 15px;
+      &--fullname {
+        font-family: $fontPreview;
+        font-weight: bold;
+        @include t(18px, 1.11);
+      }
+      &--ocupation {
+        font-family: $fontPreview;
+        color: $colorTextDark;
+        font-weight: 400;
+        @include t(16px, 1.25);
+      }
+    }
+    &__photo {
+      margin: 10px 0;
+      width: 240px;
+      height: 200px;
+      background-image: url("../images/image-default.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    &__icons {
+      list-style-type: none;
+      display: flex;
+      padding-left: 20px;
+      &--icon {
+        width: 32px;
+        height: 32px;
+        @include center;
+        font-size: 18px;
+        border-radius: 50%;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.palette01 {
+  .color {
+    &--side {
+      border-left: 5px solid $colorBrandMedium;
+    }
+    &--fullname {
+      color: $colorBrandDark;
+    }
+    &--icon {
+      border: 2px solid $colorBrandLight;
+      color: $colorBrandDark;
+    }
+  }
+}
+
+.palette02 {
+  .color {
+    &--side {
+      border-left: 5px solid $paletteTwoMedium;
+    }
+    &--fullname {
+      color: $paletteTwoDark;
+    }
+    &--icon {
+      border: 2px solid $paletteTwoLight;
+      color: $paletteTwoDark;
+    }
+  }
+}
+
+.palette03 {
+  .color {
+    &--side {
+      border-left: 5px solid $paletteThreeMedium;
+    }
+    &--fullname {
+      color: $paletteThreeDark;
+    }
+    &--icon {
+      border: 2px solid $paletteThreeLight;
+      color: $paletteThreeDark;
+    }
+  }
+}

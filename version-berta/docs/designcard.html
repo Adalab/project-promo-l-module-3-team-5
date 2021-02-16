@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Awesome profile-cards</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2b5f0495b4.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <link rel="icon" href="./assets/images/favicon.png" />
+  </head>
+
+  <body class="form centralColumn">
+    <header class="header">
+      <a href="./index.html#body" class="header__link"
+        ><img
+          class="header__generator--img"
+          src="./assets/images/tarjetas-molonas.svg"
+          alt="logo de awesome profile cards"
+          title="ir a página principal"
+        />
+      </a>
+
+      <h1 class="header__title">Awesome profile-cards</h1>
+    </header>
+
+    <main class="main__form">
+        <section class="preview">
+          <button class="preview__reset js-btn-reset">
+            <i class="far fa-trash-alt"></i><span>Reset</span>
+          </button>
+          <article class="preview__card js-card palette01">
+            <div class="card__name color--side">
+              <h2 class="card__name--fullname js-fullnamePreview color--fullname">
+                Nombre Apellidos
+              </h2>
+              <p class="card__name--ocupation js-positionPreview">
+                Front-end developer
+              </p>
+            </div>
+            <div class="js__profile-image card__photo"></div>
+            <!-- <img
+              class="card__photo"
+              src="./assets/images/image-default.jpg"
+              alt="avance de la foto"
+            /> -->
+            <nav>
+              <ul class="card__icons">
+                <li>
+                  <a href="" class="js-phonePreview"
+                    ><i class="card__icons--icon color--icon fas fa-mobile-alt"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="" class="js-emailPreview"
+                    ><i class="card__icons--icon color--icon far fa-envelope"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="" class="js-linkedinPreview" target="_blank"
+                    ><i class="card__icons--icon color--icon fab fa-linkedin-in"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="" class="js-githubPreview" target="_blank"
+                    ><i class="card__icons--icon color--icon fab fa-github-alt"></i
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </article>
+        </section>
+
+        <form action="" class="main__form--generate" method="POST">
+          <fieldset class="design collapsable">
+            <legend class="legend legend__design" title="click aquí para abrir/cerrar">
+              <i class="legend__icon--main far fa-object-ungroup"></i>
+              <h3 class="legend__title">Diseña</h3>
+              <i class="legend__icon--arrow collapsable--close fas fa-angle-down"></i>
+            </legend>
+
+            <div class="collapsable--hide">
+              <div class="design__radio">
+                <h3 class="design__radio--title">Colores</h3>
+
+                <input
+                  name="palette"
+                  class="design__radio--input js-palette"
+                  type="radio"
+                  id="paletteOne"
+                  value="01"
+                  checked
+                />
+                <label
+                  class="design__radio--label label__palette label__palette--One"
+                  for="paletteOne"
+                  >Palette One</label
+                >
+
+                <input
+                  name="palette"
+                  class="design__radio--input js-palette"
+                  type="radio"
+                  id="paletteTwo"
+                  value="02"
+                />
+                <label
+                  class="design__radio--label label__palette label__palette--Two"
+                  for="paletteTwo"
+                  >Palette Two</label
+                >
+
+                <input
+                  name="palette"
+                  class="design__radio--input js-palette"
+                  type="radio"
+                  id="paletteThree"
+                  value="03"
+                />
+                <label
+                  class="design__radio--label label__palette label__palette--Three"
+                  for="paletteThree"
+                  >Palette Three</label
+                >
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="rellena collapsable collapsable--on">
+            <legend class="legend legend__rellena" title="click aquí para abrir/cerrar">
+              <i class="legend__icon--main far fa-keyboard"></i>
+              <h3 class="legend__title">Rellena</h3>
+              <i class="legend__icon--arrow collapsable--close fas fa-angle-down"></i>
+            </legend>
+
+
+            <div class="collapsable--hide">
+              <div class="field">
+                <label class="field__label" for="completeName"
+                  >Nombre completo<span> *</span></label
+                >
+                <input
+                  class="field__input js-fullname js-input-text"
+                  placeholder="Ej: Sally Jill"
+                  id="completeName"
+                  type="text"
+                  name="name"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="position">Puesto<span> *</span></label>
+                <input
+                  class="field__input js-position js-input-text"
+                  id="position"
+                  type="text"
+                  name="job"
+                  placeholder="Ej: Front-end unicorn"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="profile-image"
+                  >Imagen de perfil<span> *</span></label
+                >
+                <div class="rellena-image">
+                  <input
+                    type="file"
+                    class="js__profile-upload-btn rellena-image__hidden"
+                  />
+                  <input
+                    class="rellena-image__add js__profile-trigger"
+                    id="profile-image"
+                    type="button"
+                    value="Añadir imagen"
+                    name="photo"
+                    title="sube aquí tu foto, preferentemente cuadrada y bonita"
+                  />
+                  <div class="rellena-image__square js__profile-preview"></div>
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="emailAddress"
+                  >Email<span> *</span></label
+                >
+                <input
+                  class="field__input js-email js-input-text"
+                  id="emailAddress"
+                  type="email"
+                  name="email"
+                  placeholder="Ej: sally.hill@gmail.com"
+                  required
+                />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="telephone">Teléfono</label>
+                <input
+                  class="field__input js-phone js-input-text"
+                  id="telephone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Ej: 555-55-55-55"
+                />
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="linkedin">Linkedin<span> *</span></label>
+                <input
+                  class="field__input js-linkedin js-input-text"
+                  id="linkedin"
+                  type="text"
+                  name="linkedin"
+                  placeholder="Ej: linkedin.com/in/sally-hill"
+                  required
+                />
+              </div>
+              <div class="field">
+                <label class="field__label" for="github">Github<span> *</span></label>
+                <input
+                  class="field__input js-github js-input-text"
+                  id="github"
+                  type="text"
+                  name="github"
+                  placeholder="Ej: @sally-hill"
+                  required
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="comparte collapsable collapsable--on">
+            <legend class="legend legend__comparte" title="click aquí para abrir/cerrar">
+              <i class="legend__icon--main fas fa-share-alt"></i>
+              <h3 class="legend__title">Comparte</h3>
+              <i class="legend__icon--arrow collapsable--close fas fa-angle-down"></i>
+            </legend>
+
+
+            <div class="collapsable--hide">
+              <div class="comparte__nav">
+                <button
+                  type="button"
+                  class="comparte__nav--button comparte__nav--buttongrey js-create-btn"
+                  title="comprueba tus datos antes de pulsar"
+                >
+                  <i class="far fa-address-card"></i>crear tarjeta
+                </button>
+              </div>
+              <div class="comparte__nav2 js-hidden-div comparte__nav2--hidden">
+                <h3 class="comparte__nav2--text">La tarjeta ha sido creada:</h3>
+                <a
+                  class="comparte__nav2--link js-card-result"
+                  href=""
+                  target="_blank"
+                  title="ir a tarjeta"
+                ></a>
+                <nav>
+                  <a
+                    class="comparte__nav2--link2 twitter-share-button js-twitter"
+                    href=""
+                    target="_blank"
+                    ><i class="fab fa-twitter"></i
+                    ><span class="comparte__nav2--span">compartir en twitter</span></a
+                  >
+                </nav>
+              </div>
+            </div>
+          </fieldset>
+
+        </form>
+
+    </main>
+    <footer class="footer">
+        <small class="footer__small">Awesome profile-cards @2021</small>
+        <a class="footer__link" href="https://adalab.es/" target="_blank"><img src="./assets/images/logo-adalab.png" alt="Logo de Adalab" title="Ir a Adalab" class="footer__link--logo"></a>
+    </footer>
+
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>
