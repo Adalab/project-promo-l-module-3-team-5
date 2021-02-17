@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function getUserData() {
   return {
@@ -9,25 +9,25 @@ function getUserData() {
     email: document.querySelector('.js-email').value,
     phone: document.querySelector('.js-phone').value,
     linkedin: document.querySelector('.js-linkedin').value,
-    github: document.querySelector('.js-github').value
+    github: document.querySelector('.js-github').value,
   };
 }
 function saveInLocalStorage() {
   const userDataInString = JSON.stringify(userData);
-  localStorage.setItem("userData", userDataInString);
+  localStorage.setItem('userData', userDataInString);
 }
 function getFromLocalStorage() {
-  const userDataInString = localStorage.getItem("userData");
+  const userDataInString = localStorage.getItem('userData');
   if (userDataInString !== null) {
     const userData = JSON.parse(userDataInString);
-    document.querySelector(".js-fullname").value = userData.name;
-    document.querySelector(".js-position").value = userData.job;
-    document.querySelector(".js-email").value = userData.email;
-    document.querySelector(".js-phone").value = userData.phone;
-    document.querySelector(".js-linkedin").value = userData.linkedin;
-    document.querySelector(".js-github").value = userData.github;
+    document.querySelector('.js-fullname').value = userData.name;
+    document.querySelector('.js-position').value = userData.job;
+    document.querySelector('.js-email').value = userData.email;
+    document.querySelector('.js-phone').value = userData.phone;
+    document.querySelector('.js-linkedin').value = userData.linkedin;
+    document.querySelector('.js-github').value = userData.github;
     photo = userData.photo;
-    const paletteElements = document.querySelectorAll(".js-palette");
+    const paletteElements = document.querySelectorAll('.js-palette');
     for (const paletteElement of paletteElements) {
       if (paletteElement.value === userData.palette) {
         paletteElement.checked = true;
@@ -37,16 +37,16 @@ function getFromLocalStorage() {
     handlePalette();
     updatePhoto();
   } else {
-    document.querySelector(".js-fullname").value = userData.name;
-    document.querySelector(".js-position").value = userData.job;
-    document.querySelector(".js-email").value = userData.email;
-    document.querySelector(".js-phone").value = userData.phone;
-    document.querySelector(".js-linkedin").value = userData.linkedin;
-    document.querySelector(".js-github").value = userData.github;
+    document.querySelector('.js-fullname').value = userData.name;
+    document.querySelector('.js-position').value = userData.job;
+    document.querySelector('.js-email').value = userData.email;
+    document.querySelector('.js-phone').value = userData.phone;
+    document.querySelector('.js-linkedin').value = userData.linkedin;
+    document.querySelector('.js-github').value = userData.github;
     photo = userData.photo;
-    const paletteElements = document.querySelectorAll(".js-palette");
+    const paletteElements = document.querySelectorAll('.js-palette');
     for (const paletteElement of paletteElements) {
-      if (paletteElement.id === "paletteOne") {
+      if (paletteElement.id === 'paletteOne') {
         paletteElement.checked = true;
       } else {
         paletteElement.checked = false;
