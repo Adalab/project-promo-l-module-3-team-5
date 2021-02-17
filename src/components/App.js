@@ -1,9 +1,16 @@
-import "../stylesheets/App.scss";
-import React from "react";
+import '../stylesheets/App.scss';
+import React from 'react';
+import Header from './Header';
 
 class App extends React.Component {
   render() {
-    return <div className="App">Hola Mundo</div>;
+    return (
+      
+    <body className="form centralColumn">
+      <Header/>
+      </body>
+  
+    );
   }
 }
 export default App;
