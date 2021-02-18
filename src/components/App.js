@@ -1,6 +1,7 @@
 import '../stylesheets/App.scss';
 import React from 'react';
 import Header from './Header';
+import Fill from './Fill';
 import Footer from './Footer';
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
           </Form>
           <CardPreview />
         </Main> */}
+        <Fill />
         <Footer />
       </div>
     );
