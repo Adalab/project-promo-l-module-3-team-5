@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from './Input';
+import BtnImg from './BtnImg';
 import '../stylesheets/layout/_rellena.scss';
 
 const Fill = () => {
@@ -25,79 +26,50 @@ const Fill = () => {
         required={true}
       />
 
-      <Input for="" text="" placeText="" id="" type="" name="" />
-      <div className="field">
-        <label className="field__label" for="profile-image">
-          Imagen de perfil<span> *</span>
-        </label>
-        <div className="rellena-image">
-          <input type="file" className="js__profile-upload-btn rellena-image__hidden" />
-          <input
-            className="rellena-image__add js__profile-trigger"
-            id="profile-image"
-            type="button"
-            value="Añadir imagen"
-            name="photo"
-            title="sube aquí tu foto, preferentemente cuadrada y bonita"
-          />
-          <div className="rellena-image__square js__profile-preview"></div>
-        </div>
-      </div>
-      <Input for="" text="" placeText="" id="" type="" name="" />
-      <div className="field">
-        <label className="field__label" for="emailAddress">
-          Email<span> *</span>
-        </label>
-        <input
-          className="field__input js-email js-input-text"
-          id="emailAddress"
-          type="email"
-          name="email"
-          placeholder="Ej: sally.hill@gmail.com"
-          required
-        />
-      </div>
-      <Input for="" text="" placeText="" id="" type="" name="" />
-      <div className="field">
-        <label className="field__label" for="telephone">
-          Teléfono
-        </label>
-        <input
-          className="field__input js-phone js-input-text"
-          id="telephone"
-          type="tel"
-          name="phone"
-          placeholder="Ej: 555-55-55-55"
-        />
-      </div>
-      <Input for="" text="" placeText="" id="" type="" name="" />
-      <div className="field">
-        <label className="field__label" for="linkedin">
-          Linkedin<span> *</span>
-        </label>
-        <input
-          className="field__input js-linkedin js-input-text"
-          id="linkedin"
-          type="text"
-          name="linkedin"
-          placeholder="Ej: linkedin.com/in/sally-hill"
-          required
-        />
-      </div>
-      <Input for="" text="" placeText="" id="" type="" name="" />
-      <div className="field">
-        <label className="field__label" for="github">
-          Github<span> *</span>
-        </label>
-        <input
-          className="field__input js-github js-input-text"
-          id="github"
-          type="text"
-          name="github"
-          placeholder="Ej: @sally-hill"
-          required
-        />
-      </div>
+      <BtnImg />
+
+      <Input
+        for="emailAddress"
+        text="Email"
+        placeText="Ej: sally.hill@gmail.com"
+        id="emailAddress"
+        type="email"
+        name="email"
+        asterisk="*"
+        required={true}
+      />
+
+      <Input
+        for="telephone"
+        text="Teléfono"
+        placeText="Ej: 555-55-55-55"
+        id="telephone"
+        type="tel"
+        name="phone"
+        required={false}
+      />
+
+      <Input
+        for="linkedin"
+        text="Linkedin"
+        placeText="Ej: linkedin.com/in/sally-hill"
+        id="linkedin"
+        type="text"
+        name="linkedin"
+        asterisk="*"
+        required={true}
+      />
+
+      <Input
+        for="github"
+        text="Github"
+        placeText="Ej: @sally-hill"
+        id="github"
+        type="text"
+        name="github"
+        asterisk="*"
+        required={true}
+      />
     </>
   );
 };

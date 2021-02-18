@@ -5,7 +5,7 @@ const Inputs = (props) => {
     <div className="field">
       <label className="field__label" for={props.for}>
         {props.text}
-        <span> *</span>
+        <span> {props.asterisk}</span>
       </label>
       <input
         className="field__input js-fullname js-input-text"
