@@ -1,9 +1,5 @@
 .preview {
-  background-image: linear-gradient(
-    to bottom,
-    $colorGradientOne,
-    $colorGradientTwo
-  );
+  background-image: linear-gradient(to bottom, $colorGradientOne, $colorGradientTwo);
   height: 457px;
   width: 100%;
   flex-grow: 1;
@@ -63,7 +59,7 @@
       margin: 10px 0;
       width: 240px;
       height: 200px;
-      background-image: url("../images/image-default.jpg");
+      background-image: url('../../images/image-default.jpg');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
