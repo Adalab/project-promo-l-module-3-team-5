@@ -1,7 +1,8 @@
-import '../stylesheets/App.scss';
-import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
+import "../stylesheets/App.scss";
+import React from "react";
+import Header from "./Header";
+import Footer from "./Footer";
+import Share from "./Share";
 
 class App extends React.Component {
   render() {
@@ -20,11 +21,11 @@ class App extends React.Component {
             <Collapsable />
             <Fill />
           </Fieldset>
-          <Fieldset>
-            <Collapsable />
-            <Share />
-          </Fieldset>
-          </Form>
+        <Fieldset>
+        <Collapsable />*/}
+        <Share />
+        {/*</Fieldset>
+         </Form>
           <CardPreview />
         </Main> */}
         <Footer />

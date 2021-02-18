@@ -1,3 +1,6 @@
+@import "../core/variables";
+@import "../core/mixins";
+
 .comparte__nav {
   display: flex;
   flex-direction: column;
@@ -65,7 +68,7 @@
     margin-bottom: 30px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
   }
-  &--span{
+  &--span {
     margin-left: 2px;
   }
   &--hidden {
