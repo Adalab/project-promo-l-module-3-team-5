@@ -11,7 +11,20 @@ class App extends React.Component {
         {/* <include src="./partials/main.html"></include>
         <include src="./partials/footer.html"></include> */}
         {/* <Main>
-          <Form />
+          <Form>
+          <Fieldset>
+            <Collapsable />
+            <Design />
+          </Fieldset>
+          <Fieldset>
+            <Collapsable />
+            <Fill />
+          </Fieldset>
+          <Fieldset>
+            <Collapsable />
+            <Share />
+          </Fieldset>
+          </Form>
           <CardPreview />
         </Main> */}
         <Footer />
