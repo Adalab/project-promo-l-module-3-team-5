@@ -4,7 +4,7 @@ import '../stylesheets/layout/_diseña.scss';
 const Design = () => {
   return (
     <fieldset className="design collapsable">
-      <include
+      {/* <include
         src="./colapsable.html"
         faclass="far fa-object-ungroup"
         title="Diseña"
@@ -57,7 +57,7 @@ const Design = () => {
             Palette Three
           </label>
         </div>
-      </div>
+      </div> */}
     </fieldset>
   );
 };
