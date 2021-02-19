@@ -28,13 +28,13 @@ class App extends React.Component {
           </Fieldset>
         <Fieldset>
         <Collapsable />*/}
-        <Share />
         {/*</Fieldset>
          </Form>
           <CardPreview />
         </Main> */}
         <Design />
         <Fill></Fill>
+        <Share />
         <Footer />
       </div>
     );
