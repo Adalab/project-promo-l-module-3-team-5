@@ -1,6 +1,8 @@
 import '../stylesheets/App.scss';
 import React from 'react';
 import Header from './Header';
+import Design from './Design';
+import Fill from './Fill';
 import Footer from './Footer';
 
 class App extends React.Component {
@@ -18,7 +20,10 @@ class App extends React.Component {
           </Fieldset>
           <Fieldset>
             <Collapsable />
-            <Fill />
+            <Fill>
+            <Input /> x 5
+            <BtnImg />
+            </Fill>
           </Fieldset>
           <Fieldset>
             <Collapsable />
@@ -27,6 +32,8 @@ class App extends React.Component {
           </Form>
           <CardPreview />
         </Main> */}
+        <Design />
+        <Fill></Fill>
         <Footer />
       </div>
     );
