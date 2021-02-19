@@ -9,7 +9,7 @@ const Design = () => {
         faclass="far fa-object-ungroup"
         title="Diseña"
         jslegend="legend__design"
-      ></include>
+      ></include>*/}
       <div className="collapsable--hide">
         <div className="design__radio">
           <h3 className="design__radio--title">Colores</h3>
@@ -22,42 +22,21 @@ const Design = () => {
             value="01"
             defaultChecked
           />
-          <label
-            className="design__radio--label label__palette label__palette--One"
-            htmlFor="paletteOne"
-          >
+          <label className="design__radio--label label__palette label__palette--One" htmlFor="paletteOne">
             Palette One
           </label>
 
-          <input
-            name="palette"
-            className="design__radio--input js-palette"
-            type="radio"
-            id="paletteTwo"
-            value="02"
-          />
-          <label
-            className="design__radio--label label__palette label__palette--Two"
-            htmlFor="paletteTwo"
-          >
+          <input name="palette" className="design__radio--input js-palette" type="radio" id="paletteTwo" value="02" />
+          <label className="design__radio--label label__palette label__palette--Two" htmlFor="paletteTwo">
             Palette Two
           </label>
 
-          <input
-            name="palette"
-            className="design__radio--input js-palette"
-            type="radio"
-            id="paletteThree"
-            value="03"
-          />
-          <label
-            className="design__radio--label label__palette label__palette--Three"
-            htmlFor="paletteThree"
-          >
+          <input name="palette" className="design__radio--input js-palette" type="radio" id="paletteThree" value="03" />
+          <label className="design__radio--label label__palette label__palette--Three" htmlFor="paletteThree">
             Palette Three
           </label>
         </div>
-      </div> */}
+      </div>
     </fieldset>
   );
 };

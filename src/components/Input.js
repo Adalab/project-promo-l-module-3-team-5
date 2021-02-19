@@ -3,7 +3,7 @@ import React from 'react';
 const Inputs = (props) => {
   return (
     <div className="field">
-      <label className="field__label" for={props.forId}>
+      <label className="field__label" htmlFor={props.forId}>
         {props.text}
         <span> {props.asterisk}</span>
       </label>

@@ -33,6 +33,7 @@ class App extends React.Component {
           <CardPreview />
         </Main> */}
         <Design />
+        <Fill></Fill>
         <Footer />
       </div>
     );
