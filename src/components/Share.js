@@ -11,7 +11,11 @@ class Share extends React.Component {
   render() {
     return (
       <fieldset className="comparte collapsable">
-        <Colapsable></Colapsable>
+        <Colapsable
+          jsLegend="legend__comparte"
+          faClass="fas fa-share-alt"
+          title="Comparte"
+        ></Colapsable>
         {/* <include
           src="./colapsable.html"
           faclassName="fas fa-share-alt"
