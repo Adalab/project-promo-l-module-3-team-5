@@ -6,13 +6,7 @@ import '../stylesheets/layout/_formulario.scss';
 const Design = () => {
   return (
     <fieldset className="design collapsable">
-      <Colapsable></Colapsable>
-      {/* <include
-        src="./colapsable.html"
-        faclass="far fa-object-ungroup"
-        title="Diseña"
-        jslegend="legend__design"
-      ></include>*/}
+      <Colapsable jsLegend="legend__design" faClass="far fa-object-ungroup" title="Diseña"></Colapsable>
       <div className="collapsable--hide">
         <div className="design__radio">
           <h3 className="design__radio--title">Colores</h3>
