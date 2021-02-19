@@ -1,4 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
 import React from "react";
+import Colapsable from "./Colapsable";
 import "../stylesheets/layout/_comparte.scss";
 
 class Share extends React.Component {
@@ -7,36 +10,47 @@ class Share extends React.Component {
   // }
   render() {
     return (
-      <div className="collapsable--hide">
-        <div className="comparte__nav">
-          <button
-            type="button"
-            className="comparte__nav--button comparte__nav--buttongrey js-create-btn"
-            title="comprueba tus datos antes de pulsar"
-          >
-            <i className="far fa-address-card"></i>crear tarjeta
-          </button>
-        </div>
-        <div className="comparte__nav2 js-hidden-div comparte__nav2--hidden">
-          <h3 className="comparte__nav2--text">La tarjeta ha sido creada:</h3>
-          <a
-            className="comparte__nav2--link js-card-result"
-            href=""
-            target="_blank"
-            title="ir a tarjeta"
-          ></a>
-          <nav>
+      <fieldset className="comparte collapsable">
+        <Colapsable></Colapsable>
+        {/* <include
+          src="./colapsable.html"
+          faclassName="fas fa-share-alt"
+          title="Comparte"
+          jsLegend="legend__comparte"
+        ></include> */}
+        <div className="collapsable--hide">
+          <div className="comparte__nav">
+            <button
+              type="button"
+              className="comparte__nav--button comparte__nav--buttongrey js-create-btn"
+              title="comprueba tus datos antes de pulsar"
+            >
+              <i className="far fa-address-card"></i>crear tarjeta
+            </button>
+          </div>
+          <div className="comparte__nav2 js-hidden-div comparte__nav2--hidden">
+            <h3 className="comparte__nav2--text">La tarjeta ha sido creada:</h3>
             <a
-              className="comparte__nav2--link2 twitter-share-button js-twitter"
+              className="comparte__nav2--link js-card-result"
               href=""
               target="_blank"
-            >
-              <i className="fab fa-twitter"></i>
-              <span className="comparte__nav2--span">compartir en twitter</span>
-            </a>
-          </nav>
+              title="ir a tarjeta"
+            ></a>
+            <nav>
+              <a
+                className="comparte__nav2--link2 twitter-share-button js-twitter"
+                href=""
+                target="_blank"
+              >
+                <i className="fab fa-twitter"></i>
+                <span className="comparte__nav2--span">
+                  compartir en twitter
+                </span>
+              </a>
+            </nav>
+          </div>
         </div>
-      </div>
+      </fieldset>
     );
   }
 }

@@ -1,9 +1,12 @@
 import React from 'react';
+import Colapsable from './Colapsable';
 import '../stylesheets/layout/_diseña.scss';
+import '../stylesheets/layout/_formulario.scss';
 
 const Design = () => {
   return (
     <fieldset className="design collapsable">
+      <Colapsable></Colapsable>
       {/* <include
         src="./colapsable.html"
         faclass="far fa-object-ungroup"
