@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import Design from './Design';
 import Fill from './Fill';
+import Share from "./Share";
 import Footer from './Footer';
 
 class App extends React.Component {
