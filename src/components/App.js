@@ -1,8 +1,17 @@
+<<<<<<< HEAD
 import "../stylesheets/App.scss";
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import Share from "./Share";
+=======
+import '../stylesheets/App.scss';
+import React from 'react';
+import Header from './Header';
+import Design from './Design';
+import Fill from './Fill';
+import Footer from './Footer';
+>>>>>>> dev
 
 class App extends React.Component {
   render() {
@@ -19,7 +28,10 @@ class App extends React.Component {
           </Fieldset>
           <Fieldset>
             <Collapsable />
-            <Fill />
+            <Fill>
+            <Input /> x 5
+            <BtnImg />
+            </Fill>
           </Fieldset>
         <Fieldset>
         <Collapsable />*/}
@@ -28,6 +40,8 @@ class App extends React.Component {
          </Form>
           <CardPreview />
         </Main> */}
+        <Design />
+        <Fill></Fill>
         <Footer />
       </div>
     );
