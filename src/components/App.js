@@ -19,7 +19,10 @@ class App extends React.Component {
           </Fieldset>
           <Fieldset>
             <Collapsable />
-            <Fill />
+            <Fill>
+            <Input /> x 5
+            <BtnImg />
+            </Fill>
           </Fieldset>
           <Fieldset>
             <Collapsable />
