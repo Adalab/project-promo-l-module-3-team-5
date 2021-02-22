@@ -20,13 +20,13 @@ class App extends React.Component {
   }
   handleColapsable() {
     console.log("holi");
-    // this.setState({
-    //   isOpen : !this.state.isOpen
-    // });
+    this.setState({
+      isOpen : !this.state.isOpen
+    });
   }
 
   render() {
-     // const openClassName = this.state.isOpen? "collapsable--on":"";
+     const openClassName = this.state.isOpen? "collapsable--on":"";
     return (
       <div className="form centralColumn">
         <Header logoClass="header__generator--img" />
@@ -36,27 +36,30 @@ class App extends React.Component {
             <CardPreview />
           </section>
           <form action="" className="main__form--generate" method="POST">
-          <Fieldset fieldsetClass="design" functionColapsable={this.handleColapsable}>
+          <Fieldset fieldsetClass="design" classCollapsable={openClassName}>
               <Colapsable
                 jsLegend="legend__design"
                 faClass="far fa-object-ungroup"
                 title="Diseña"
+                functionColapsable={this.handleColapsable}
               />
               <Design />
             </Fieldset>
-            <Fieldset fieldsetClass="rellena">
+            <Fieldset fieldsetClass="rellena" classCollapsable={openClassName}>
               <Colapsable
                 jsLegend="legend__rellena"
                 faClass="far fa-keyboard"
                 title="Rellena"
+                functionColapsable={this.handleColapsable}
               />
               <Fill />
             </Fieldset>
-            <Fieldset fieldsetClass="comparte">
+            <Fieldset fieldsetClass="comparte" classCollapsable={openClassName}>
               <Colapsable
                 jsLegend="legend__comparte"
                 faClass="fas fa-share-alt"
                 title="Comparte"
+                functionColapsable={this.handleColapsable}
               ></Colapsable>
               <Share />
             </Fieldset>

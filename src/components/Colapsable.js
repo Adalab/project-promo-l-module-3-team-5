@@ -5,7 +5,7 @@ class Colapsable extends React.Component {
   constructor(props) {
     super(props);
     this.handleClick=this.handleClick.bind(this);
-    this.functionColapsable=this.functionColapsable.bind(this);
+    
   }
   handleClick(){
     this.props.functionColapsable()

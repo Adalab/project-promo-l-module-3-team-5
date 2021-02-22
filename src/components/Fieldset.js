@@ -1,13 +1,9 @@
 import React from 'react';
 
 class Fieldset extends React.Component {
-    constructor(props) {
-        super(props);
-        this.functionColapsable=this.functionColapsable.bind(this);
-        }
     render() {
         return (
-            <fieldset className={this.props.fieldsetClass+" collapsable "} functionColapsable={this.props.functionColapsable}>
+            <fieldset className={this.props.fieldsetClass+" collapsable "+this.props.classCollapsable}>
                 {this.props.children}
             </fieldset>
         )
