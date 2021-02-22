@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="form centralColumn">
-        <Header />
+        <Header logoClass="header__generator--img" />
         <main class="main__form">
           <section class="preview">
             <BtnReset />
