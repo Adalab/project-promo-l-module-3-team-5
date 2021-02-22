@@ -1,12 +1,9 @@
 import React from 'react';
-import Colapsable from './Colapsable';
 import '../stylesheets/layout/_diseña.scss';
 import '../stylesheets/layout/_formulario.scss';
 
 const Design = () => {
   return (
-    <fieldset className="design collapsable">
-      <Colapsable jsLegend="legend__design" faClass="far fa-object-ungroup" title="Diseña"></Colapsable>
       <div className="collapsable--hide">
         <div className="design__radio">
           <h3 className="design__radio--title">Colores</h3>
@@ -34,7 +31,6 @@ const Design = () => {
           </label>
         </div>
       </div>
-    </fieldset>
   );
 };
 

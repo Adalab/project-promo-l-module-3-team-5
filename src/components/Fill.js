@@ -6,8 +6,6 @@ import '../stylesheets/layout/_rellena.scss';
 
 const Fill = () => {
   return (
-    <fieldset className="rellena collapsable">
-      <Colapsable jsLegend="legend__rellena" faClass="far fa-keyboard" title="Rellena"></Colapsable>
       <div className="collapsable--hide">
         <Input forId="completeName" text="Nombre completo" placeText="Ej: Sally Jill" name="name" />
 
@@ -31,7 +29,6 @@ const Fill = () => {
 
         <Input forId="github" text="Github" placeText="Ej: @sally-hill" name="github" />
       </div>
-    </fieldset>
   );
 };
 

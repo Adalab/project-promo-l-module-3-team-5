@@ -10,18 +10,6 @@ class Share extends React.Component {
   // }
   render() {
     return (
-      <fieldset className="comparte collapsable">
-        <Colapsable
-          jsLegend="legend__comparte"
-          faClass="fas fa-share-alt"
-          title="Comparte"
-        ></Colapsable>
-        {/* <include
-          src="./colapsable.html"
-          faclassName="fas fa-share-alt"
-          title="Comparte"
-          jsLegend="legend__comparte"
-        ></include> */}
         <div className="collapsable--hide">
           <div className="comparte__nav">
             <button
@@ -54,7 +42,6 @@ class Share extends React.Component {
             </nav>
           </div>
         </div>
-      </fieldset>
     );
   }
 }
