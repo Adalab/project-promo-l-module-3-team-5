@@ -5,47 +5,94 @@ import BtnImg from './BtnImg';
 import '../stylesheets/layout/_rellena.scss';
 
 class Fill extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      job: '',
-      email: '',
-      phone: '',
-      linkedin: '',
-      github: ''
-    };
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     name: '',
+  //     job: '',
+  //     email: '',
+  //     phone: '',
+  //     linkedin: '',
+  //     github: ''
+  //   };
+  //   this.handleInputChange = this.handleInputChange.bind(this);
+  // }
 
-  handleInputChange(ev){
-    console.log(ev.target.value);
-    console.log(ev.target.name);
-    const value = ev.target.value;
-    const key = ev.target.name;
-    this.setState({
-      [key]:value
-    })
-  }
+  // handleInputChange(ev) {
+  //   console.log(ev.target.value);
+  //   console.log(ev.target.name);
+  //   const value = ev.target.value;
+  //   const key = ev.target.name;
+  //   this.setState({
+  //     [key]: value,
+  //   });
+  // }
 
   render() {
-    return (<div className="collapsable--hide">
-      <Input forId="completeName" text="Nombre completo" placeText="Ej: Sally Jill" name="name" handler={this.handleInputChange} value={this.state.name}/>
+    return (
+      <div className="collapsable--hide">
+        <Input
+          forId="completeName"
+          text="Nombre completo"
+          placeText="Ej: Sally Jill"
+          name="name"
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.name}
+        />
 
-      <Input forId="position" text="Puesto" placeText="Ej: Front-end unicorn" name="job" handler={this.handleInputChange} value={this.state.job}/>
+        <Input
+          forId="position"
+          text="Puesto"
+          placeText="Ej: Front-end unicorn"
+          name="job"
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.job}
+        />
 
-      <BtnImg />
+        <BtnImg />
 
-      <Input forId="emailAddress" text="Email" placeText="Ej: sally.hill@gmail.com" type="email" name="email" handler={this.handleInputChange} value={this.state.email}/>
+        <Input
+          forId="emailAddress"
+          text="Email"
+          placeText="Ej: sally.hill@gmail.com"
+          type="email"
+          name="email"
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.email}
+        />
 
-      <Input forId="telephone" text="Teléfono" placeText="Ej: 555-55-55-55" type="tel" name="phone" asterisk="" required={false} handler={this.handleInputChange} value={this.state.phone}/>
+        <Input
+          forId="telephone"
+          text="Teléfono"
+          placeText="Ej: 555-55-55-55"
+          type="tel"
+          name="phone"
+          asterisk=""
+          required={false}
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.phone}
+        />
 
-      <Input forId="linkedin" text="Linkedin" placeText="Ej: linkedin.com/in/sally-hill" name="linkedin" handler={this.handleInputChange} value={this.state.linkedin}/>
+        <Input
+          forId="linkedin"
+          text="Linkedin"
+          placeText="Ej: linkedin.com/in/sally-hill"
+          name="linkedin"
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.linkedin}
+        />
 
-      <Input forId="github" text="Github" placeText="Ej: @sally-hill" name="github" handler={this.handleInputChange} value={this.state.github}/>
-    </div>);
+        <Input
+          forId="github"
+          text="Github"
+          placeText="Ej: @sally-hill"
+          name="github"
+          handleInputChange={this.props.handleInputChange}
+          value={this.props.github}
+        />
+      </div>
+    );
   }
-
 }
 
 export default Fill;
