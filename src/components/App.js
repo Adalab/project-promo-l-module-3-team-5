@@ -1,21 +1,21 @@
-import '../stylesheets/App.scss';
-import React from 'react';
-import Header from './Header';
-import BtnReset from './BtnReset';
-import CardPreview from './CardPreview';
-import Form from './Form';
-import Footer from './Footer';
+import "../stylesheets/App.scss";
+import React from "react";
+import Header from "./Header";
+import BtnReset from "./BtnReset";
+import CardPreview from "./CardPreview";
+import Form from "./Form";
+import Footer from "./Footer";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      job: '',
-      email: '',
-      phone: '',
-      linkedin: '',
-      github: '',
+      name: "",
+      job: "",
+      email: "",
+      phone: "",
+      linkedin: "",
+      github: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -36,10 +36,16 @@ class App extends React.Component {
         <main className="main__form">
           <section className="preview">
             <BtnReset />
-            <CardPreview data={this.state} />
+            <CardPreview
+              data={this.state}
+              handleInputChange={this.handleInputChange}
+            />
           </section>
           <section>
-            <Form data={this.state} handleInputChange={this.handleInputChange} />
+            <Form
+              data={this.state}
+              handleInputChange={this.handleInputChange}
+            />
           </section>
         </main>
         <Footer />
