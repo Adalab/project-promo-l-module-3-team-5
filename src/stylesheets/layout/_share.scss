@@ -1,0 +1,78 @@
+@import '../core/variables';
+@import '../core/mixins';
+
+.share {
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    &--btn {
+      width: 199px;
+      height: 50px;
+      border-radius: 12px;
+      background-color: $colorBrandSide;
+      outline: none;
+      @include center;
+      @include t(18px, normal);
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      font-family: $fontMain;
+      font-weight: 600;
+      justify-content: space-evenly;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    &--btngrey:disabled {
+      background-color: #d5d5d5;
+      cursor: initial;
+    }
+  }
+  &__nav2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid $colorLine;
+    border-bottom: 1px solid $colorLine;
+
+    &--text {
+      @include t(16px, normal);
+      color: $colorTextDark;
+      font-family: $fontMain;
+      font-weight: 600;
+    }
+    &--link {
+      text-decoration: none;
+      color: $colorBrandSide;
+      font-size: 12px;
+      padding-top: 5px;
+    }
+    &--link2 {
+      display: inline-block;
+      color: white;
+      font-size: 14px;
+      line-height: 1.43;
+      font-family: $fontMain;
+      text-decoration: none;
+      width: 181px;
+      height: 30px;
+      background-color: $colorTweeter;
+      border-radius: 3px;
+      text-align: center;
+      padding: 5px 8px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.32);
+    }
+    &--span {
+      margin-left: 2px;
+    }
+    &--hidden {
+      display: none;
+    }
+  }
+}

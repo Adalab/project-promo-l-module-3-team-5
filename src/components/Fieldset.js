@@ -21,7 +21,7 @@ class Fieldset extends React.Component {
       <fieldset className={this.props.fieldsetClass + ' collapsable ' + openClassName}>
         <legend
           className={'legend ' + this.props.jsLegend}
-          title="click aquí para abrir/cerrar"
+          title="Click aquí para abrir/cerrar"
           onClick={this.handleClick}
         >
           <i className={'legend__icon--main ' + this.props.faClass}></i>

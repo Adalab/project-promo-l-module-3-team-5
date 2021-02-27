@@ -12,10 +12,10 @@ class Form extends React.Component {
         <Fieldset fieldsetClass="design" title="Diseña" faClass="far fa-object-ungroup">
           <Design />
         </Fieldset>
-        <Fieldset fieldsetClass="rellena" title="Rellena" faClass="far fa-keyboard">
+        <Fieldset fieldsetClass="fill" title="Rellena" faClass="far fa-keyboard">
           <Fill handleInputChange={this.props.handleInputChange} />
         </Fieldset>
-        <Fieldset fieldsetClass="comparte" title="Comparte" faClass="fas fa-share-alt">
+        <Fieldset fieldsetClass="share" title="Comparte" faClass="fas fa-share-alt">
           <Share />
         </Fieldset>
       </form>
