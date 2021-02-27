@@ -34,13 +34,13 @@
   color: $colorTextDark;
 }
 
-@mixin formRellenaLabels {
+@mixin formFillLabels {
   font-family: $fontMain;
   font-size: 14px;
   color: $colorBrandDark;
-  // copy pasta ;) @include formRellenaLabels
+  // copy pasta ;) @include formFillLabels
 }
-@mixin formRellenaInput {
+@mixin formFillInput {
   height: 30px;
   margin-top: 7px;
   border: 1px solid $colorBrandLight;
@@ -50,9 +50,9 @@
   @include tablet {
     text-indent: 10px;
   }
-  // copy pasta ;) @include formRellenaInput
+  // copy pasta ;) @include formFillInput
 }
-@mixin formRellenaField {
+@mixin formFillField {
   margin: 0 20px 20px 19px;
   display: flex;
   flex-direction: column;

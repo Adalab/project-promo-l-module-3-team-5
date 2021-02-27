@@ -2,7 +2,7 @@ import React from 'react';
 import Input from './Input';
 import BtnImg from './BtnImg';
 // import PropTypes from 'prop-types';
-import '../stylesheets/layout/_rellena.scss';
+import '../stylesheets/layout/_fill.scss';
 
 class Fill extends React.Component {
   // constructor(props) {
@@ -85,7 +85,7 @@ class Fill extends React.Component {
         <Input
           forId="github"
           text="Github"
-          placeText="Ej: @sally-hill"
+          placeText="Ej: sally-hill"
           name="github"
           handleInputChange={this.props.handleInputChange}
           value={this.props.github}
