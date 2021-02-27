@@ -3,9 +3,9 @@ import logo from '../images/tarjetas-molonas.svg';
 import '../stylesheets/layout/_header.scss';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+  // constructor(props) {
+  //   super(props);
+  // }
   render() {
     return (
       <header className="header">
@@ -13,8 +13,8 @@ class Header extends React.Component {
           <img
             className={this.props.logoClass}
             src={logo}
-            alt="logo de awesome profile cards"
-            title="ir a página principal"
+            alt="Logo de awesome profile cards"
+            title="Ir a página principal"
           />
         </a>
         <h1 className="header__title">Awesome profile-cards</h1>

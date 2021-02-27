@@ -16,7 +16,7 @@ class Inputs extends React.Component {
           <span> {this.props.asterisk}</span>
         </label>
         <input
-          className="field__input js-fullname js-input-text"
+          className="field__input"
           placeholder={this.props.placeText}
           id={this.props.forId}
           type={this.props.type}

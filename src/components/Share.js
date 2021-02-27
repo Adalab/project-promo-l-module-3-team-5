@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
 import React from 'react';
-import Colapsable from './Colapsable';
+// import Colapsable from './Colapsable';
 import '../stylesheets/layout/_share.scss';
 
 class Share extends React.Component {

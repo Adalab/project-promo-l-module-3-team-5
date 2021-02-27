@@ -1,11 +1,11 @@
-@import "../core/variables";
-@import "../core/mixins";
+@import '../core/variables';
+@import '../core/mixins';
 
 .legend {
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 5px 0 5px 0;
+  padding: 10px 0;
   &__icon {
     &--main {
       color: $colorBrandSide;

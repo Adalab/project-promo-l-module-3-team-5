@@ -1,6 +1,6 @@
 import React from 'react';
-import '../stylesheets/layout/_diseña.scss';
-import '../stylesheets/layout/_formulario.scss';
+import '../stylesheets/layout/_design.scss';
+import '../stylesheets/layout/_form.scss';
 
 const Design = () => {
   return (

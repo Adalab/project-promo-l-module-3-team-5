@@ -1,4 +1,4 @@
-import '../stylesheets/layout/_formulario.scss';
+import '../stylesheets/layout/_form.scss';
 import React from 'react';
 import Fieldset from './Fieldset';
 import Design from './Design';
