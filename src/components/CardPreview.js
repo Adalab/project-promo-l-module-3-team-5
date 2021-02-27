@@ -14,22 +14,22 @@ class CardPreview extends React.Component {
         <nav>
           <ul className="card__icons">
             <li>
-              <a href="">
+              <a href={this.props.data.phone || ''} className="js-phonePreview">
                 <i className="card__icons--icon color--icon fas fa-mobile-alt"></i>
               </a>
             </li>
             <li>
-              <a href="">
+              <a href={this.props.data.email || ''} className="js-emailPreview">
                 <i className="card__icons--icon color--icon far fa-envelope"></i>
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a href={this.props.data.linkedin || ''} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-linkedin-in"></i>
               </a>
             </li>
             <li>
-              <a href="" target="_blank">
+              <a href={this.props.data.github || ''} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-github-alt"></i>
               </a>
             </li>
