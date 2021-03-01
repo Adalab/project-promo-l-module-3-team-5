@@ -3,8 +3,7 @@ import '../stylesheets/layout/_page.scss';
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import CardGenerator from './CardGenerator';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Landing extends React.Component {
   render() {
@@ -33,13 +32,13 @@ class Landing extends React.Component {
             </ul>
           </section>
           <nav className="landing__nav">
-            <a
+            <Link
               className="landing__nav--link"
-              href="./designcard.html"
+              to="./cardGenerator"
               title="Ir a generador de tarjetas"
             >
               Comenzar
-            </a>
+            </Link>
           </nav>
         </main>
         <Footer />

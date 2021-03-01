@@ -9,9 +9,12 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
-        <Landing />
-      </div>
+      <>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/cardGenerator" component={CardGenerator} />
+      </Switch>
+      </>
     );
   }
 }
