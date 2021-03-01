@@ -4,8 +4,9 @@ import '../stylesheets/layout/_preview.scss';
 
 class CardPreview extends React.Component {
   render() {
+    const { palette, data } = this.props;
     return (
-      <article className={'preview__card palette' + this.props.palette}>
+      <article className={'preview__card palette' + palette}>
         <div className="card__name color--side">
           <h2 className="card__name--fullname color--fullname">Nombre Apellidos</h2>
           <p className="card__name--ocupation ">Front-end developer</p>
@@ -14,22 +15,22 @@ class CardPreview extends React.Component {
         <nav>
           <ul className="card__icons">
             <li>
-              <a href={this.props.data.phone || ''}>
+              <a href={data.phone || ''}>
                 <i className="card__icons--icon color--icon fas fa-mobile-alt"></i>
               </a>
             </li>
             <li>
-              <a href={this.props.data.email || ''}>
+              <a href={'mailto:' + data.email || '#'}>
                 <i className="card__icons--icon color--icon far fa-envelope"></i>
               </a>
             </li>
             <li>
-              <a href={this.props.data.linkedin || ''} target="_blank" rel="noreferrer">
+              <a href={data.linkedin || ''} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-linkedin-in"></i>
               </a>
             </li>
             <li>
-              <a href={this.props.data.github || ''} target="_blank" rel="noreferrer">
+              <a href={data.github || ''} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-github-alt"></i>
               </a>
             </li>
