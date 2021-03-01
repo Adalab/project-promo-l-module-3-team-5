@@ -10,7 +10,7 @@ class Form extends React.Component {
     return (
       <form action="" className="main__form--generate" method="POST">
         <Fieldset fieldsetClass="design" title="Diseña" faClass="far fa-object-ungroup">
-          <Design />
+          <Design handlePalette={this.props.handlePalette} />
         </Fieldset>
         <Fieldset fieldsetClass="fill" title="Rellena" faClass="far fa-keyboard">
           <Fill handleInputChange={this.props.handleInputChange} />

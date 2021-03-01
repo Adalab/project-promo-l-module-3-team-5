@@ -5,7 +5,7 @@ import '../stylesheets/layout/_preview.scss';
 class CardPreview extends React.Component {
   render() {
     return (
-      <article className="preview__card palette01">
+      <article className={'preview__card palette' + this.props.palette}>
         <div className="card__name color--side">
           <h2 className="card__name--fullname color--fullname">Nombre Apellidos</h2>
           <p className="card__name--ocupation ">Front-end developer</p>
