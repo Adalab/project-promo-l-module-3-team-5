@@ -23,8 +23,9 @@ class CardGenerator extends React.Component {
   }
 
   handleInputChange(ev) {
-    console.log(ev.target.value);
-    console.log(ev.target.name);
+    // console.log(ev.target.value);
+    // console.log(ev.target.name);
+    console.log(this.state);
     const value = ev.target.value;
     const key = ev.target.name;
     this.setState({
@@ -33,7 +34,7 @@ class CardGenerator extends React.Component {
   }
 
   handlePalette(ev) {
-    console.log('man cambiao', ev.target.value);
+    // console.log('man cambiao', ev.target.value);
     this.setState({ palette: ev.target.value });
   }
 

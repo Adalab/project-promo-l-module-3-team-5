@@ -4,12 +4,13 @@ import '../stylesheets/layout/_preview.scss';
 
 class CardPreview extends React.Component {
   render() {
-    const { palette, data } = this.props;
+    const { data } = this.props;
+    console.log(data);
     return (
-      <article className={'preview__card palette' + palette}>
+      <article className={'preview__card palette' + data.palette}>
         <div className="card__name color--side">
-          <h2 className="card__name--fullname color--fullname">Nombre Apellidos</h2>
-          <p className="card__name--ocupation ">Front-end developer</p>
+          <h2 className="card__name--fullname color--fullname">{data.name || 'Patti Smith'}</h2>
+          <p className="card__name--ocupation ">{data.job || 'Jefaza'}</p>
         </div>
         <div className=" card__photo"></div>
         <nav>
