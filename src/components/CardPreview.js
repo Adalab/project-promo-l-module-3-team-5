@@ -6,28 +6,31 @@ class CardPreview extends React.Component {
   render() {
     const { data } = this.props;
 
-    const githubPrefix = () => {
-      let githubLink = data.github;
-      if (!data.github) {
-        return "#";
-      } else {
-        // githubLink.replace("https://github.com/", "");
-        // console.log(githubLink);
-        githubLink = "https://github.com/" + githubLink;
-        return githubLink;
-      }
-    };
-
-    const linkedinPrefix = () => {
-      let linkedinLink = data.linkedin;
+    const linkedinUser = () => {
+      const linkedinPrefix = "https://www.linkedin.com/in/";
+      let linkedinLink = data.linkedin.toString();
       if (!data.linkedin) {
         return "#";
       } else {
+        linkedinLink = linkedinLink.replace(linkedinPrefix, "");
+        linkedinLink = linkedinPrefix + linkedinLink;
         return linkedinLink;
       }
     };
 
-    console.log(githubPrefix());
+    const githubUser = () => {
+      const githubPrefix = "https://github.com/";
+      let githubLink = data.github.toString();
+      if (!data.github) {
+        return "#";
+      } else {
+        githubLink = githubLink.replace(githubPrefix, "");
+        githubLink = githubPrefix + githubLink;
+        return githubLink;
+      }
+    };
+
+    console.log(githubUser());
 
     return (
       <article className={"preview__card palette" + data.palette}>
@@ -51,12 +54,12 @@ class CardPreview extends React.Component {
               </a>
             </li>
             <li>
-              <a href={ linkedinPrefix()} target="_blank" rel="noreferrer">
+              <a href={linkedinUser()} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-linkedin-in"></i>
               </a>
             </li>
             <li>
-              <a href={githubPrefix()} target="_blank" rel="noreferrer">
+              <a href={githubUser()} target="_blank" rel="noreferrer">
                 <i className="card__icons--icon color--icon fab fa-github-alt"></i>
               </a>
             </li>
