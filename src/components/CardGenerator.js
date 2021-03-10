@@ -20,6 +20,11 @@ class CardGenerator extends React.Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+  handleReset() {
+    console.log('Me han clickado');
+    this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01' });
   }
 
   handleInputChange(ev) {
@@ -44,7 +49,7 @@ class CardGenerator extends React.Component {
         <Header logoClass="header__generator--img" />
         <main className="main__form">
           <section className="preview">
-            <BtnReset />
+            <BtnReset handleReset={this.handleReset} />
             <CardPreview data={this.state} palette={this.state.palette} handleInputChange={this.handleInputChange} />
           </section>
           <section>
