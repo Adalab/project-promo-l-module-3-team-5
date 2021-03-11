@@ -98,6 +98,7 @@ class CardGenerator extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="form centralColumn">
         <Header logoClass="header__generator--img" />
