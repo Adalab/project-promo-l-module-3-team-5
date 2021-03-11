@@ -80,7 +80,8 @@ class CardGenerator extends React.Component {
   }
 
   handleReset() {
-    this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01' });
+    console.log('Me han clickado');
+    this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01', avatar: '' });
   }
 
   handleInputChange(ev) {
@@ -122,6 +123,7 @@ class CardGenerator extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="form centralColumn">
         <Header logoClass="header__generator--img" />
