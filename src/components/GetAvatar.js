@@ -7,9 +7,7 @@ class GetAvatar extends React.Component {
   constructor(props) {
     super(props);
     this.fr = new FileReader();
-
     this.myFileField = React.createRef();
-
     this.uploadImage = this.uploadImage.bind(this);
     this.getImage = this.getImage.bind(this);
   }
@@ -38,13 +36,13 @@ class GetAvatar extends React.Component {
     console.log(this.props);
     const avatar = this.props.avatar === "" ? defaultAvatar : this.props.avatar;
     return (
-      <div className="get-avatar">
+      <div className="field">
         <label className="field__label" htmlFor="profile-image">
           Imagen de perfil<span> *</span>
         </label>
         <div className="fill-image">
-          <label className="get-avatar__label" type="button">
-            Get avatar!
+          <label className="fill-image__add" type="button">
+            Añadir imagen
             <input
               className="fill-image__hidden"
               type="file"
@@ -54,7 +52,7 @@ class GetAvatar extends React.Component {
           </label>
 
           <div
-            className="get-avatar__preview"
+            className="fill-image__square"
             style={{ backgroundImage: `url(${avatar})` }}
           ></div>
         </div>

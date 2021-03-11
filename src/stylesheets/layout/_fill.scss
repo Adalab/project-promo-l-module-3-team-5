@@ -27,6 +27,8 @@
       font-family: $fontMain;
       font-size: 14px;
       text-align: center;
+      font-weight: bold;
+      line-height: 30px;
       &:hover {
         cursor: pointer;
       }
@@ -60,8 +62,3 @@
   }
 }
 
-.get-avatar__preview {
-  width: 40px;
-  height: 40px;
-  background-size: cover;
-}

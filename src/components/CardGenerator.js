@@ -28,7 +28,6 @@ class CardGenerator extends React.Component {
   }
 
   componentDidUpdate() {
-    // escribir en el local storage lo hacemo cuando el componente ya ha sido actualizado
     ls.set('name', this.state.name);
     ls.set('job', this.state.job);
     ls.set('email', this.state.email);
@@ -36,10 +35,10 @@ class CardGenerator extends React.Component {
     ls.set('linkedin', this.state.linkedin);
     ls.set('github', this.state.github);
     ls.set('palette', this.state.palette);
+    ls.set('avatar', this.state.avatar);
   }
 
   componentDidMount() {
-    // leer del local storage lo hacemos en el componentDidMount
     const localStorageName = ls.get('name');
     if (localStorageName) {
       this.setState({name: localStorageName});
@@ -68,9 +67,11 @@ class CardGenerator extends React.Component {
     if (localStoragePalette) {
       this.setState({palette: localStoragePalette});
     }
+    const localStorageAvatar = ls.get('avatar');
+    if (localStorageAvatar) {
+      this.setState({avatar: localStorageAvatar});
+    }
   }
-
-
 
   handleReset() {
     console.log('Me han clickado');
@@ -78,8 +79,6 @@ class CardGenerator extends React.Component {
   }
 
   handleInputChange(ev) {
-    // console.log(ev.target.value);
-    // console.log(ev.target.name);
     console.log(this.state);
     const value = ev.target.value;
     const key = ev.target.name;
@@ -105,7 +104,7 @@ class CardGenerator extends React.Component {
         <main className="main__form">
           <section className="preview">
             <BtnReset handleReset={this.handleReset} />
-            <CardPreview data={this.state} palette={this.state.palette} handleInputChange={this.handleInputChange} />
+            <CardPreview data={this.state} palette={this.state.palette} handleInputChange={this.handleInputChange} avatar={this.state.avatar} />
           </section>
           <section>
             <Form data={this.state} handleInputChange={this.handleInputChange} handlePalette={this.handlePalette} avatar={this.state.avatar} getAvatar={this.updateAvatar} />

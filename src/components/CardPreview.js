@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import "../stylesheets/layout/_preview.scss";
+import defaultAvatar from '../images/image-default.jpg';
 
 class CardPreview extends React.Component {
   render() {
@@ -31,7 +32,7 @@ class CardPreview extends React.Component {
     };
 
     console.log(githubUser());
-
+    const avatar = this.props.avatar === '' ? defaultAvatar : this.props.avatar;
     return (
       <article className={"preview__card palette" + data.palette}>
         <div className="card__name color--side">
@@ -40,7 +41,7 @@ class CardPreview extends React.Component {
           </h2>
           <p className="card__name--ocupation ">{data.job || "Jefaza"}</p>
         </div>
-        <div className=" card__photo"></div>
+        <div className=" card__photo" style={{ backgroundImage: `url(${avatar})` }}></div>
         <nav>
           <ul className="card__icons">
             <li>
