@@ -1,6 +1,7 @@
 import React from 'react';
 import Input from './Input';
 import BtnImg from './BtnImg';
+import GetAvatar from './GetAvatar';
 // import PropTypes from 'prop-types';
 import '../stylesheets/layout/_fill.scss';
 
@@ -49,7 +50,8 @@ class Fill extends React.Component {
           value={this.props.job}
         />
 
-        <BtnImg />
+        {/* <BtnImg  handleInputChange={this.props.handleInputChange} /> */}
+        <GetAvatar name="photo" avatar={this.props.avatar} getAvatar={this.props.getAvatar} />
 
         <Input
           forId="emailAddress"

@@ -19,10 +19,12 @@ class CardGenerator extends React.Component {
       linkedin: '',
       github: '',
       palette: '01',
+      avatar:'',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.updateAvatar = this.updateAvatar.bind(this);
   }
 
   componentDidUpdate() {
@@ -86,6 +88,11 @@ class CardGenerator extends React.Component {
     });
   }
 
+  updateAvatar(avatar) {
+    this.setState({ avatar: avatar });
+    console.log(this.state);
+  }
+
   handlePalette(ev) {
     // console.log('man cambiao', ev.target.value);
     this.setState({ palette: ev.target.value });
@@ -101,7 +108,7 @@ class CardGenerator extends React.Component {
             <CardPreview data={this.state} palette={this.state.palette} handleInputChange={this.handleInputChange} />
           </section>
           <section>
-            <Form data={this.state} handleInputChange={this.handleInputChange} handlePalette={this.handlePalette} />
+            <Form data={this.state} handleInputChange={this.handleInputChange} handlePalette={this.handlePalette} avatar={this.state.avatar} getAvatar={this.updateAvatar} />
           </section>
         </main>
         <Footer />

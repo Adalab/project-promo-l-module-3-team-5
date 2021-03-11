@@ -13,7 +13,7 @@ class Form extends React.Component {
           <Design handlePalette={this.props.handlePalette} />
         </Fieldset>
         <Fieldset fieldsetClass="fill" title="Rellena" faClass="far fa-keyboard">
-          <Fill handleInputChange={this.props.handleInputChange} />
+          <Fill handleInputChange={this.props.handleInputChange} avatar={this.props.avatar} getAvatar={this.props.getAvatar} />
         </Fieldset>
         <Fieldset fieldsetClass="share" title="Comparte" faClass="fas fa-share-alt">
           <Share />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class Inputs extends React.Component {
   constructor(props) {
@@ -29,8 +29,8 @@ class Inputs extends React.Component {
   }
 }
 Inputs.defaultProps = {
-  asterisk: '*',
-  type: 'text',
+  asterisk: "*",
+  type: "text",
   required: true,
 };
 
