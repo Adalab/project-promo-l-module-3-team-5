@@ -75,7 +75,7 @@ class CardGenerator extends React.Component {
 
   handleReset() {
     console.log('Me han clickado');
-    this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01' });
+    this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01', avatar: '' });
   }
 
   handleInputChange(ev) {
