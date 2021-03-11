@@ -9,7 +9,6 @@ class Fieldset extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    console.log('holi');
     this.setState({
       isOpen: !this.state.isOpen,
     });

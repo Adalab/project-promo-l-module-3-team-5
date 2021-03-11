@@ -44,12 +44,14 @@
       color: $colorTextDark;
       font-family: $fontMain;
       font-weight: 600;
+      text-align: center;
+      padding-bottom: 20px;
     }
     &--link {
+      text-align: center;
       text-decoration: none;
       color: $colorBrandSide;
-      font-size: 12px;
-      padding-top: 5px;
+      font-size: 14px;
     }
     &--link2 {
       display: inline-block;

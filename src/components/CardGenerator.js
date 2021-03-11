@@ -1,12 +1,14 @@
-import '../stylesheets/App.scss';
 import React from 'react';
 import Header from './Header';
 import BtnReset from './BtnReset';
 import CardPreview from './CardPreview';
 import Form from './Form';
 import Footer from './Footer';
+// styles
+import '../stylesheets/App.scss';
+// services
 import ls from '../services/localStorage';
-
+import api from '../services/api';
 
 class CardGenerator extends React.Component {
   constructor(props) {
@@ -19,12 +21,16 @@ class CardGenerator extends React.Component {
       linkedin: '',
       github: '',
       palette: '01',
-      avatar:'',
+      avatar: '',
+      cardURL: '',
+      err: '',
     };
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handlePalette = this.handlePalette.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.updateAvatar = this.updateAvatar.bind(this);
+    this.handleApi = this.handleApi.bind(this);
   }
 
   componentDidUpdate() {
@@ -41,45 +47,43 @@ class CardGenerator extends React.Component {
   componentDidMount() {
     const localStorageName = ls.get('name');
     if (localStorageName) {
-      this.setState({name: localStorageName});
+      this.setState({ name: localStorageName });
     }
     const localStorageJob = ls.get('job');
     if (localStorageJob) {
-      this.setState({job: localStorageJob});
+      this.setState({ job: localStorageJob });
     }
     const localStorageEmail = ls.get('email');
     if (localStorageEmail) {
-      this.setState({email: localStorageEmail});
+      this.setState({ email: localStorageEmail });
     }
     const localStoragePhone = ls.get('phone');
     if (localStoragePhone) {
-      this.setState({phone: localStoragePhone});
+      this.setState({ phone: localStoragePhone });
     }
     const localStorageLinkedin = ls.get('linkedin');
     if (localStorageLinkedin) {
-      this.setState({linkedin: localStorageLinkedin});
+      this.setState({ linkedin: localStorageLinkedin });
     }
     const localStorageGithub = ls.get('github');
     if (localStorageGithub) {
-      this.setState({github: localStorageGithub});
+      this.setState({ github: localStorageGithub });
     }
     const localStoragePalette = ls.get('palette');
     if (localStoragePalette) {
-      this.setState({palette: localStoragePalette});
+      this.setState({ palette: localStoragePalette });
     }
     const localStorageAvatar = ls.get('avatar');
     if (localStorageAvatar) {
-      this.setState({avatar: localStorageAvatar});
+      this.setState({ avatar: localStorageAvatar });
     }
   }
 
   handleReset() {
-    console.log('Me han clickado');
     this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01' });
   }
 
   handleInputChange(ev) {
-    console.log(this.state);
     const value = ev.target.value;
     const key = ev.target.name;
     this.setState({
@@ -89,12 +93,32 @@ class CardGenerator extends React.Component {
 
   updateAvatar(avatar) {
     this.setState({ avatar: avatar });
-    console.log(this.state);
   }
 
   handlePalette(ev) {
     // console.log('man cambiao', ev.target.value);
     this.setState({ palette: ev.target.value });
+  }
+
+  handleApi() {
+    const userData = {
+      name: this.state.name,
+      job: this.state.job,
+      email: this.state.email,
+      phone: this.state.phone,
+      linkedin: this.state.linkedin,
+      github: this.state.github,
+      palette: this.state.palette,
+      photo: this.state.avatar,
+    };
+
+    api(userData).then((data) => {
+      if (data.success === true) {
+        this.setState({ cardURL: data.cardURL });
+      } else {
+        this.setState({ err: data.error });
+      }
+    });
   }
 
   render() {
@@ -104,10 +128,22 @@ class CardGenerator extends React.Component {
         <main className="main__form">
           <section className="preview">
             <BtnReset handleReset={this.handleReset} />
-            <CardPreview data={this.state} palette={this.state.palette} handleInputChange={this.handleInputChange} avatar={this.state.avatar} />
+            <CardPreview
+              data={this.state}
+              palette={this.state.palette}
+              handleInputChange={this.handleInputChange}
+              avatar={this.state.avatar}
+            />
           </section>
           <section>
-            <Form data={this.state} handleInputChange={this.handleInputChange} handlePalette={this.handlePalette} avatar={this.state.avatar} getAvatar={this.updateAvatar} />
+            <Form
+              data={this.state}
+              handleInputChange={this.handleInputChange}
+              handlePalette={this.handlePalette}
+              avatar={this.state.avatar}
+              getAvatar={this.updateAvatar}
+              handleApi={this.handleApi}
+            />
           </section>
         </main>
         <Footer />

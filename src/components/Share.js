@@ -5,10 +5,51 @@ import React from 'react';
 import '../stylesheets/layout/_share.scss';
 
 class Share extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  // }
+  constructor(props) {
+    super(props);
+    this.handleShare = this.handleShare.bind(this);
+  }
+
+  handleShare() {
+    this.props.handleApi();
+  }
+
   render() {
+    console.log(this.props.data);
+    const cardShare = () => {
+      if (this.props.data.cardURL) {
+        return (
+          <div className="share__nav2 ">
+            {/* share__nav2--hidden */}
+            <h3 className="share__nav2--text">La tarjeta ha sido creada: </h3>
+            <a
+              className="share__nav2--link"
+              href={this.props.data.cardURL}
+              target="_blank"
+              title="ir a tarjeta"
+              rel="noreferrer"
+            >
+              {this.props.data.cardURL}
+            </a>
+            <div>
+              <a className="share__nav2--link2 twitter-share-button" href="" target="_blank">
+                <i className="fab fa-twitter"></i>
+                <span className="share__nav2--span">Compartir en twitter</span>
+              </a>
+            </div>
+          </div>
+        );
+      } else if (this.props.data.err) {
+        console.log('?');
+        return (
+          <div className="share__nav2 ">
+            {/* share__nav2--hidden */}
+            <h3 className="share__nav2--text">Rellena todos los campos obligatorios, lerda. </h3>
+          </div>
+        );
+      }
+    };
+
     return (
       <div className="collapsable--hide">
         <div className="share__nav">
@@ -16,12 +57,16 @@ class Share extends React.Component {
             type="button"
             className="share__nav--btn share__nav--btngrey"
             title="Comprueba tus datos antes de pulsar"
+            onClick={this.handleShare}
           >
             <i className="far fa-address-card"></i>Crear tarjeta
           </button>
         </div>
-        <div className="share__nav2 share__nav2--hidden">
-          <h3 className="share__nav2--text">La tarjeta ha sido creada:</h3>
+        {cardShare()}
+        {/* <div className="share__nav2 share__nav2--hidden">          
+          <h3 className="share__nav2--text">
+            La tarjeta ha sido creada: {this.props.data.cardURL} {this.props.data.err}{' '}
+          </h3>
           <a className="share__nav2--link" href="" target="_blank" title="ir a tarjeta"></a>
           <nav>
             <a className="share__nav2--link2 twitter-share-button" href="" target="_blank">
@@ -29,7 +74,7 @@ class Share extends React.Component {
               <span className="share__nav2--span">Compartir en twitter</span>
             </a>
           </nav>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React from 'react';
 import Input from './Input';
-import BtnImg from './BtnImg';
 import GetAvatar from './GetAvatar';
 // import PropTypes from 'prop-types';
 import '../stylesheets/layout/_fill.scss';
@@ -30,6 +29,7 @@ class Fill extends React.Component {
   // }
 
   render() {
+    console.log(this.props);
     return (
       <div className="collapsable--hide">
         <Input
@@ -38,7 +38,7 @@ class Fill extends React.Component {
           placeText="Ej: Sally Jill"
           name="name"
           handleInputChange={this.props.handleInputChange}
-          value={this.props.name}
+          value={this.props.data.name}
         />
 
         <Input
@@ -47,10 +47,9 @@ class Fill extends React.Component {
           placeText="Ej: Front-end unicorn"
           name="job"
           handleInputChange={this.props.handleInputChange}
-          value={this.props.job}
+          value={this.props.data.job}
         />
 
-        {/* <BtnImg  handleInputChange={this.props.handleInputChange} /> */}
         <GetAvatar name="photo" avatar={this.props.avatar} getAvatar={this.props.getAvatar} />
 
         <Input
@@ -60,7 +59,7 @@ class Fill extends React.Component {
           type="email"
           name="email"
           handleInputChange={this.props.handleInputChange}
-          value={this.props.email}
+          value={this.props.data.email}
         />
 
         <Input
@@ -72,7 +71,7 @@ class Fill extends React.Component {
           asterisk=""
           required={false}
           handleInputChange={this.props.handleInputChange}
-          value={this.props.phone}
+          value={this.props.data.phone}
         />
 
         <Input
@@ -81,7 +80,7 @@ class Fill extends React.Component {
           placeText="Ej: linkedin.com/in/sally-hill"
           name="linkedin"
           handleInputChange={this.props.handleInputChange}
-          value={this.props.linkedin}
+          value={this.props.data.linkedin}
         />
 
         <Input
@@ -90,7 +89,7 @@ class Fill extends React.Component {
           placeText="Ej: sally-hill"
           name="github"
           handleInputChange={this.props.handleInputChange}
-          value={this.props.github}
+          value={this.props.data.github}
         />
       </div>
     );
