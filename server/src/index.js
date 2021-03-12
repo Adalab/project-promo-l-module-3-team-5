@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const api = require('../.././web/src/services/api.js');
 
 // create server
 const server = express();
@@ -17,7 +18,7 @@ server.listen(serverPort, () => {
 });
 
 // STATIC SERVER: listen files in public folder
-const staticServerPath = './public'; // relative to the root of the project
+const staticServerPath = '../.././web/public'; // relative to the root of the project
 server.use(express.static(staticServerPath));
 
 // API: listen fetch requests
@@ -33,9 +34,9 @@ server.get('/users', (req, res) => {
 // API request > POST > http://localhost:3000/card
 server.post('/card', (req, res) => {
   // console request body params
-  console.log(`Creating the user in database with user name: "${req.body.userName}"`);
+  console.log(`Creating the user in database with user name: "${req.body}"`);
   const response = {
-    result: `User created: ${req.body.userName}`,
+    result: `Card created: ${req.body.cardURL}`,
   };
   res.json(response);
 });

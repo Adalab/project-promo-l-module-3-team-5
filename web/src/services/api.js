@@ -1,12 +1,8 @@
-const api = (data) => {
-  const url = 'https://awesome-profile-cards.herokuapp.com/card';
-
-  return fetch(url, {
+const sendData = (userData) => {
+  return fetch('http://localhost:3000/card', {
     method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    body: JSON.stringify(userData),
+    headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => response.json())
     .then((data) => {
@@ -14,4 +10,6 @@ const api = (data) => {
     });
 };
 
-export default api;
+export default {
+  sendData: sendData,
+};
