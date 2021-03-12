@@ -113,7 +113,7 @@ class CardGenerator extends React.Component {
       photo: this.state.avatar,
     };
 
-    api(userData).then((data) => {
+    api.sendData(userData).then((data) => {
       if (data.success === true) {
         this.setState({ cardURL: data.cardURL });
       } else {

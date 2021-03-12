@@ -16,7 +16,7 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3006 react-scripts start",
     "build": "react-scripts build",
     "docs": "react-scripts build && rm -rf docs/ && mv build/ docs/",
     "test": "react-scripts test",

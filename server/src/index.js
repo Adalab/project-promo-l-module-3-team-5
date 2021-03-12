@@ -1,12 +1,11 @@
 const express = require('express');
 const cors = require('cors');
-const api = require('../.././web/src/services/api.js');
+// const api = require('../.././web/src/services/api.js');
 
-// create server
 const server = express();
 
 // set express middleware
-//   we must always put these lines, until we know what they do
+//   we must always put these lines, until we know what they do, pringuis
 //   more info: https://expressjs.com/es/guide/using-middleware.html
 server.use(cors());
 server.use(express.json());
@@ -17,19 +16,17 @@ server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-// STATIC SERVER: listen files in public folder
 const staticServerPath = '../.././web/public'; // relative to the root of the project
 server.use(express.static(staticServerPath));
 
-// API: listen fetch requests
 
 // API request > GET > http://localhost:3000/users
-server.get('/users', (req, res) => {
-  const response = {
-    users: [{ name: 'Sofía' }, { name: 'María' }],
-  };
-  res.json(response);
-});
+// server.get('/users', (req, res) => {
+//   const response = {
+//     users: [{ name: 'Sofía' }, { name: 'María' }],
+//   };
+//   res.json(response);
+// });
 
 // API request > POST > http://localhost:3000/card
 server.post('/card', (req, res) => {
