@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tu AWESOME CARD, de nada.</title>
+  </head>
+  <body>
+    <article className="preview__card palette <%= users.palette %>">
+      <div className="card__name color--side">
+        <h2 className="card__name--fullname color--fullname"><%= users.name %></h2>
+        <p className="card__name--ocupation "><%= users.job %></p>
+      </div>
+      <!-- <div className=" card__photo" style="backgroundimage: url(<%= users.photo %>)"></div> -->
+      <nav>
+        <ul className="card__icons">
+          <li>
+            <a href="<%= users.phone %>">
+              <i className="card__icons--icon color--icon fas fa-mobile-alt"></i>
+            </a>
+          </li>
+          <li>
+            <a href="<%= users.email %>">
+              <i className="card__icons--icon color--icon far fa-envelope"></i>
+            </a>
+          </li>
+          <li>
+            <a href="<%= users.linkedin %>" target="_blank" rel="noreferrer">
+              <i className="card__icons--icon color--icon fab fa-linkedin-in"></i>
+            </a>
+          </li>
+          <li>
+            <a href="<%= users.github %>" target="_blank" rel="noreferrer">
+              <i className="card__icons--icon color--icon fab fa-github-alt"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 // const api = require('../.././web/src/services/api.js');
-
+const Database = require('better-sqlite3');
 const server = express();
 
 // set express middleware
@@ -10,21 +10,37 @@ const server = express();
 server.use(cors());
 server.use(express.json());
 
+server.set('view engine', 'ejs');
+
 // init express aplication
-const serverPort = 3000;
+const serverPort = process.env.Port || 3000;
 server.listen(serverPort, () => {
   console.log(`Server listening at http://localhost:${serverPort}`);
 });
 
-const staticServerPath = '../.././web/public'; // relative to the root of the project
+// init and config data base
+const db = new Database('./src/data/cards.db', {
+  // this line log in console all data base queries
+  verbose: console.log,
+});
+
+const staticServerPath = '../public'; // relative to the root of the project
 server.use(express.static(staticServerPath));
 
 // API request > GET > http://localhost:3000/users
 server.get('/card/:id', (req, res) => {
-  const response = {
-    users: [{ name: 'Sofía' }, { name: 'María' }],
-  };
-  res.json(response);
+  // get user data
+  const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
+  const users = query.all(1);
+  res.json(users);
+  console.log(users);
+
+  // response with rendered template
+  if (users) {
+    res.render('../views/pages/card', users);
+  } else {
+    res.render('../views/pages/card-not-found');
+  }
 });
 
 // API request > POST > http://localhost:3000/card
