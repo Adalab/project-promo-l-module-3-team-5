@@ -1,12 +1,16 @@
 const express = require('express');
 const cors = require('cors');
-// const api = require('../.././web/src/services/api.js');
 const Database = require('better-sqlite3');
+
+// ----------------------
+// CONFIGURATION SECTION
+// ----------------------
+
 const server = express();
 
 // set express middleware
 server.use(cors());
-server.use(express.json());
+server.use(express.json({ limit: '10mb' }));
 
 server.set('view engine', 'ejs');
 
@@ -22,10 +26,20 @@ const db = new Database('./src/data/cards.db', {
   verbose: console.log,
 });
 
-const staticServerPath = '../public'; // relative to the root of the project
+// ------------------
+// ENDPOINT SECTION
+// ------------------
+
+const staticServerPath = './public'; // relative to the root of the project
 server.use(express.static(staticServerPath));
 
-// API request > GET > http://localhost:3000/users
+//poner una función por cada método/ruta que se quiere que el servidor escuche. Escucha tres rutas:
+// 1.raiz ('http:localhost/') === index.html GET (lo usa el navegador pidiendo la página)
+// 2. http:localhost/card/<numerito> GET
+// 3. http:localhost/card/ POST (se utilizan para la api, desde el fetch en JS)
+// http:localhost/404-not-found.html ¿?¿?¿?¿?¿?¿?¿?
+
+// API request > GET > http://localhost:3000/????
 server.get('/card/:id', (req, res) => {
   // req, desde donde nos están mandando los datos: URL que nos está llamando
   console.log(req.params.id);
@@ -36,16 +50,14 @@ server.get('/card/:id', (req, res) => {
 
   // response with rendered template
   if (users) {
-    res.render('../views/pages/card', users);
+    res.render('./pages/card', users);
   } else {
-    res.render('../views/pages/card-not-found');
+    res.render('./pages/card-not-found');
   }
 });
 
 // API request > POST > http://localhost:3000/card
 server.post('/card', (req, res) => {
-  console.log(`Creating the user in database with user name: "${req.body}"`);
-
   const response = {};
 
   if (!req.body.name || req.body.name === '') {
@@ -70,13 +82,30 @@ server.post('/card', (req, res) => {
     response.success = false;
     response.error = 'Comprueba que has subido tu selfie en el espejo del baño.';
   } else {
+    // save to db
+    const stmt = db.prepare(
+      'INSERT INTO cards (palette, name, job, email, photo, phone, linkedin, github) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    );
+    const result = stmt.run(
+      req.body.palette,
+      req.body.name,
+      req.body.job,
+      req.body.email,
+      req.body.photo,
+      req.body.phone,
+      req.body.linkedin,
+      req.body.github
+    );
+
+    result.lastInsertRowid;
+
+    console.log(req.host);
     const isDevEnviroment = process.env.NODE_ENV === 'development';
     const cardURL = isDevEnviroment ? '//localhost:3000' : 'https://awesome-cards-locas-torage.herokuapp.com/';
     response.success = true;
-    response.cardURL = cardURL + 'card/:id';
-    // `${cardURL}/card/:id`
+    response.cardURL = cardURL + 'card/' + result.lastInsertRowid;
   }
-  // ¿cómo le insoflamos a la base de datos todos estos datos?
+  // ¿cómo le insuflamos a la base de datos todos estos datos?
   res.json(response);
 });
 

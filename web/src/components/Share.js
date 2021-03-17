@@ -44,7 +44,7 @@ class Share extends React.Component {
         return (
           <div className="share__nav2 ">
             {/* share__nav2--hidden */}
-            <h3 className="share__nav2--text">Rellena todos los campos obligatorios, lerda. </h3>
+            <h3 className="share__nav2--text">Rellena todos los campos para que tu tarjeta sea realmente AWESOME. </h3>
           </div>
         );
       }

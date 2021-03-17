@@ -1,7 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 
 const isDevEnviroment = process.env.NODE_ENV === 'development'; // Booleano
-const apiURL = isDevEnviroment ? '//localhost:3000' : 'https://awesome-cards-locas-torage.herokuapp.com/';
+const apiURL = isDevEnviroment ? '//localhost:3000/card' : 'https://awesome-cards-locas-torage.herokuapp.com/card';
 
 console.log('isDevEnviroment', isDevEnviroment);
 console.log('process.env.NODE_ENV', process.env.NODE_ENV);
