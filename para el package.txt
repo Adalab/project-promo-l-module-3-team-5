@@ -1,2 +1,2 @@
-    "start": "node src/index.js", //"cd web && npm install && npm run build && cd .. && cd server && npm install && node src/index.js"
-    "dev": "nodemon src/index.js" //"cd web && npm start & cd server && npm run dev"
+//"cd web && npm install && npm run build && cd .. && cd server && npm install && node src/index.js"
+//"cd web && npm start & cd server && npm run dev"
