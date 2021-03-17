@@ -5,8 +5,6 @@ const Database = require('better-sqlite3');
 const server = express();
 
 // set express middleware
-//   we must always put these lines, until we know what they do, pringuis
-//   more info: https://expressjs.com/es/guide/using-middleware.html
 server.use(cors());
 server.use(express.json());
 
@@ -29,11 +27,12 @@ server.use(express.static(staticServerPath));
 
 // API request > GET > http://localhost:3000/users
 server.get('/card/:id', (req, res) => {
+  // req, desde donde nos están mandando los datos: URL que nos está llamando
+  console.log(req.params.id);
+  const userID = req.params.id;
   // get user data
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
-  const users = query.all(1);
-  res.json(users);
-  console.log(users);
+  const users = query.get(userID); //sustituirse por el id de la url de params.match.id
 
   // response with rendered template
   if (users) {
@@ -51,55 +50,43 @@ server.post('/card', (req, res) => {
 
   if (!req.body.name || req.body.name === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un nombre';
+    response.error = 'Comprueba que has rellenado tu nombre.¡Tú puedes!';
   } else if (!req.body.job || req.body.job === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un puesto';
+    response.error = 'Comprueba que has rellenado tu puesto.¡Que el mundo sepa hasta dónde has llegado!';
   } else if (!req.body.email || req.body.email === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un email';
+    response.error = 'Comprueba que has rellenado tu email.¡No te vamos a llenar de SPAM!';
   } else if (!req.body.phone || req.body.phone === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un teléfono';
+    response.error = 'Comprueba que has rellenado tu teléfono o contacto de emergencia AA.';
   } else if (!req.body.linkedin || req.body.linkedin === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un linkedin';
+    response.error = 'Comprueba que has rellenado tu usuaria de Linkedin.¡Que suban esas vistas de perfil!';
   } else if (!req.body.github || req.body.github === '') {
     response.success = false;
-    response.error = 'Que te peines, pon un github';
+    response.error = 'Comprueba que has rellenado tu usuaria de Linkedin.¡Que suban esas estrellas!';
   } else if (!req.body.photo || req.body.photo === '') {
     response.success = false;
-    response.error = 'Que te peines, pon una foto';
-  } else if (!req.body.palette || req.body.palette === '') {
-    response.success = false;
-    response.error = 'Que te peines, elige paleta';
+    response.error = 'Comprueba que has subido tu selfie en el espejo del baño.';
   } else {
+    const isDevEnviroment = process.env.NODE_ENV === 'development';
+    const cardURL = isDevEnviroment ? '//localhost:3000' : 'https://awesome-cards-locas-torage.herokuapp.com/';
     response.success = true;
-    response.cardURL = 'TODO DEBUTY';
+    response.cardURL = cardURL + 'card/:id';
+    // `${cardURL}/card/:id`
   }
-
-  // api.sendData(userData).then((data) => {
-  //   return data;
-  // });
-  // const card = () => {
-  //   if (data !== undefined) {
-  //     console.log(card);
-  //     res.json({
-  //       error: false,
-  //       data: data.name,
-  //     });
-  //   } else {
-  //     // Si el usuario no existe devuelvo un error
-  //     res.status(404).json({
-  //       error: 'undefined data',
-  //       message: 'undefined data',
-  //     });
-  //   }
-  // };
-
-  // console.log(`Creating the user in database with user name: "${req.body}"`);
-  // const response = {
-  //   result: `Card created: ${req.body.cardURL}`,
-  // };
-  // res.json(response);
+  // ¿cómo le insoflamos a la base de datos todos estos datos?
+  res.json(response);
 });
+
+// ---------------------
+//   NOT FOUND SECTION
+// ---------------------
+
+// server.get('*', (req, res) => {
+//   // relative to this directory
+//   const notFoundFileRelativePath = '../public/404-not-found.html';
+//   const notFoundFileAbsolutePath = path.join(__dirname, notFoundFileRelativePath);
+//   res.status(404).sendFile(notFoundFileAbsolutePath);
+// });
