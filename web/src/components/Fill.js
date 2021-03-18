@@ -5,31 +5,7 @@ import GetAvatar from './GetAvatar';
 import '../stylesheets/layout/_fill.scss';
 
 class Fill extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     name: '',
-  //     job: '',
-  //     email: '',
-  //     phone: '',
-  //     linkedin: '',
-  //     github: ''
-  //   };
-  //   this.handleInputChange = this.handleInputChange.bind(this);
-  // }
-
-  // handleInputChange(ev) {
-  //   console.log(ev.target.value);
-  //   console.log(ev.target.name);
-  //   const value = ev.target.value;
-  //   const key = ev.target.name;
-  //   this.setState({
-  //     [key]: value,
-  //   });
-  // }
-
   render() {
-    console.log(this.props);
     return (
       <div className="collapsable--hide">
         <Input

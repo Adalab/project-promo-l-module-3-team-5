@@ -80,7 +80,6 @@ class CardGenerator extends React.Component {
   }
 
   handleReset() {
-    console.log('Me han clickado');
     this.setState({ name: '', job: '', email: '', phone: '', linkedin: '', github: '', palette: '01', avatar: '' });
   }
 
@@ -97,7 +96,6 @@ class CardGenerator extends React.Component {
   }
 
   handlePalette(ev) {
-    // console.log('man cambiao', ev.target.value);
     this.setState({ palette: ev.target.value });
   }
 
@@ -123,7 +121,6 @@ class CardGenerator extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="form centralColumn">
         <Header logoClass="header__generator--img" />

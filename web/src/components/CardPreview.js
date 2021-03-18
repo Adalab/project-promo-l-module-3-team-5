@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import "../stylesheets/layout/_preview.scss";
+import React from 'react';
+import '../stylesheets/layout/_preview.scss';
 import defaultAvatar from '../images/image-default.jpg';
 
 class CardPreview extends React.Component {
@@ -8,49 +8,46 @@ class CardPreview extends React.Component {
     const { data } = this.props;
 
     const linkedinUser = () => {
-      const linkedinPrefix = "https://www.linkedin.com/in/";
+      const linkedinPrefix = 'https://www.linkedin.com/in/';
       let linkedinLink = data.linkedin.toString();
       if (!data.linkedin) {
-        return "#";
+        return '#';
       } else {
-        linkedinLink = linkedinLink.replace(linkedinPrefix, "");
+        linkedinLink = linkedinLink.replace(linkedinPrefix, '');
         linkedinLink = linkedinPrefix + linkedinLink;
         return linkedinLink;
       }
     };
 
     const githubUser = () => {
-      const githubPrefix = "https://github.com/";
+      const githubPrefix = 'https://github.com/';
       let githubLink = data.github.toString();
       if (!data.github) {
-        return "#";
+        return '#';
       } else {
-        githubLink = githubLink.replace(githubPrefix, "");
+        githubLink = githubLink.replace(githubPrefix, '');
         githubLink = githubPrefix + githubLink;
         return githubLink;
       }
     };
 
-    console.log(githubUser());
     const avatar = this.props.avatar === '' ? defaultAvatar : this.props.avatar;
     return (
-      <article className={"preview__card palette" + data.palette}>
+      <article className={'preview__card palette' + data.palette}>
         <div className="card__name color--side">
-          <h2 className="card__name--fullname color--fullname">
-            {data.name || "Patti Smith"}
-          </h2>
-          <p className="card__name--ocupation ">{data.job || "Jefaza"}</p>
+          <h2 className="card__name--fullname color--fullname">{data.name || 'Patti Smith'}</h2>
+          <p className="card__name--ocupation ">{data.job || 'Jefaza'}</p>
         </div>
         <div className=" card__photo" style={{ backgroundImage: `url(${avatar})` }}></div>
         <nav>
           <ul className="card__icons">
             <li>
-              <a href={data.phone || ""}>
+              <a href={data.phone || ''}>
                 <i className="card__icons--icon color--icon fas fa-mobile-alt"></i>
               </a>
             </li>
             <li>
-              <a href={"mailto:" + data.email || "#"}>
+              <a href={'mailto:' + data.email || '#'}>
                 <i className="card__icons--icon color--icon far fa-envelope"></i>
               </a>
             </li>

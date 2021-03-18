@@ -42,7 +42,6 @@ server.use(express.static(staticServerPath));
 // API request > GET > http://localhost:3000/????
 server.get('/card/:id', (req, res) => {
   // req, desde donde nos están mandando los datos: URL que nos está llamando
-  console.log(req.params.id);
   const userID = req.params.id;
   // get user data
   const query = db.prepare(`SELECT * FROM cards WHERE id=?`);
@@ -99,7 +98,6 @@ server.post('/card', (req, res) => {
 
     result.lastInsertRowid;
 
-    console.log(req.host);
     const isDevEnviroment = process.env.NODE_ENV === 'development';
     const cardURL = isDevEnviroment ? '//localhost:3000' : 'https://awesome-cards-locas-torage.herokuapp.com/';
     response.success = true;

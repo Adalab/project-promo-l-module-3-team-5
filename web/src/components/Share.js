@@ -15,7 +15,6 @@ class Share extends React.Component {
   }
 
   render() {
-    console.log(this.props.data);
     const cardShare = () => {
       if (this.props.data.cardURL) {
         return (
@@ -40,7 +39,6 @@ class Share extends React.Component {
           </div>
         );
       } else if (this.props.data.err) {
-        console.log('?');
         return (
           <div className="share__nav2 ">
             {/* share__nav2--hidden */}
