@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  // background-color: $colorBackground;
   grid-row: 2;
 }
 .landing {
@@ -42,7 +41,6 @@
     margin-top: 3vh;
     border: 1.6px solid rgba(225, 115, 52, 0.21);
     border-radius: 4px;
-    // width: 268px;
     padding: 2.5vh 20px 1.8vh;
     display: grid;
     grid-template-columns: repeat(3, 60px);
@@ -51,7 +49,6 @@
     text-align: center;
     @include tablet {
       margin-top: 2.6vh;
-      // width: 325px;
       grid-template-columns: repeat(3, 75px);
       column-gap: 30px;
       border-radius: 5px;

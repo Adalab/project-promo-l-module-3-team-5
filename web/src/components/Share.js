@@ -41,7 +41,6 @@ class Share extends React.Component {
       } else if (this.props.data.err) {
         return (
           <div className="share__nav2 ">
-            {/* share__nav2--hidden */}
             <h3 className="share__nav2--text">Rellena todos los campos para que tu tarjeta sea realmente AWESOME. </h3>
           </div>
         );
@@ -61,18 +60,6 @@ class Share extends React.Component {
           </button>
         </div>
         {cardShare()}
-        {/* <div className="share__nav2 share__nav2--hidden">          
-          <h3 className="share__nav2--text">
-            La tarjeta ha sido creada: {this.props.data.cardURL} {this.props.data.err}{' '}
-          </h3>
-          <a className="share__nav2--link" href="" target="_blank" title="ir a tarjeta"></a>
-          <nav>
-            <a className="share__nav2--link2 twitter-share-button" href="" target="_blank">
-              <i className="fab fa-twitter"></i>
-              <span className="share__nav2--span">Compartir en twitter</span>
-            </a>
-          </nav>
-        </div> */}
       </div>
     );
   }
